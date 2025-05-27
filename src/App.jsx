@@ -1,3 +1,14 @@
+import { Hero } from "./components/hero/Hero";
+import { Layout } from "./UI/layout/Layout";
+import { Nav } from "./UI/nav/Nav";
+
 export const App = () => {
-  return <div>hekko world</div>;
+  return (
+    <Layout>
+      <Nav />
+      <main>
+        <Hero />
+      </main>
+    </Layout>
+  );
 };
