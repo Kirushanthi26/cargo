@@ -1,3 +1,4 @@
+import { ClientLogo } from "./components/clientLogos/ClientLogo";
 import { Hero } from "./components/hero/Hero";
 import { Intro } from "./components/intro/Intro";
 import { Layout } from "./UI/layout/Layout";
@@ -10,6 +11,7 @@ export const App = () => {
       <main>
         <Hero />
         <Intro />
+        <ClientLogo />
       </main>
     </Layout>
   );
