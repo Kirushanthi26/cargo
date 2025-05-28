@@ -13,7 +13,6 @@ const IntroImageStylesDiv = styled.div`
     left: 42rem;
     height: 15rem;
     padding: 2rem;
-    border-radius: 0.5rem;
     clip-path: polygon(
       0 0,
       100% 0%,
@@ -43,6 +42,30 @@ const IntroImageStylesDiv = styled.div`
   }
 `;
 
+const ImgIntroStyles1Box = styled.div`
+  position: relative;
+  height: 60rem;
+`;
+
+const ClipBoxLook = styled.div`
+  width: 6rem;
+  height: 25rem;
+  position: absolute;
+  bottom: 5rem;
+  left: 3rem;
+  z-index: 9999;
+  background-image: linear-gradient(
+    230deg,
+    #075985 0%,
+    #075985 60%,
+    transparent 60%,
+    transparent 77%,
+    #f97316 77%,
+    #f97316 100%
+  );
+  clip-path: polygon(0% 0%, 100% 30%, 100% 100%, 0% 100%);
+`;
+
 const ImgIntroStyles1 = styled.img`
   width: 25rem;
   box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4);
@@ -63,25 +86,17 @@ const ImgIntroStyles2 = styled.img`
   left: 20rem;
 `;
 
-const ClipBox = styled.div`
-  position: absolute;
-  bottom: -18rem;
-  left: 3rem;
-  width: 6rem;
-  height: 20rem;
-  background-color: #f97316;
-  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
-  z-index: 10;
-`;
-
 export const IntroImg = () => {
   return (
     <IntroImageStylesDiv>
-      <ImgIntroStyles1
-        src={img1}
-        alt="intro image 1"
-        className="intro-image--p1"
-      />
+      <ImgIntroStyles1Box>
+        <ClipBoxLook></ClipBoxLook>
+        <ImgIntroStyles1
+          src={img1}
+          alt="intro image 1"
+          className="intro-image--p1"
+        />
+      </ImgIntroStyles1Box>
       <ImgIntroStyles2
         src={img2}
         alt="intro image 2"

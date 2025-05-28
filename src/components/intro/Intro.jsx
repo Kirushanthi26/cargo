@@ -19,25 +19,6 @@ const IntroImgs = styled.div`
   width: 100%;
   height: 80vh;
   position: relative;
-
-  .clip-box {
-    width: 6rem;
-    height: 25rem;
-    position: absolute;
-    bottom: 21rem;
-    left: 3rem;
-    z-index: 9999;
-    background-image: linear-gradient(
-      230deg,
-      #075985 0%,
-      #075985 60%,
-      transparent 60%,
-      transparent 77%,
-      #f97316 77%,
-      #f97316 100%
-    );
-    clip-path: polygon(0% 0%, 100% 30%, 100% 100%, 0% 100%);
-  }
 `;
 
 const IntroTextBox = styled.div`
@@ -114,19 +95,10 @@ const BoxStyle = styled.div`
   transform: skewY(35deg);
 `;
 
-// const ClipBox = styled.div`
-//   width: 6rem;
-//   height: 20rem;
-//   background-color: #f97316;
-//   position: absolute;
-//   bottom: 0;
-// `;
-
 export const Intro = () => {
   return (
     <WelcomeSection>
       <IntroImgs>
-        <div className="clip-box"></div>
         <IntroImg />
       </IntroImgs>
       <IntroTextBox>
