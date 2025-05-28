@@ -181,12 +181,12 @@ const NewsContent = styled.div`
 const Title = styled.h3`
   margin: 0;
   font-size: 1.2rem;
-  color: #222;
+  color: #1e293b;
 `;
 
 const Meta = styled.div`
-  font-size: 0.9rem;
-  color: #888;
+  font-size: 1.3rem;
+  color: #1e293b;
   display: flex;
   justify-content: start;
   margin: 0.5rem 0;
@@ -194,6 +194,6 @@ const Meta = styled.div`
 `;
 
 const Description = styled.p`
-  font-size: 0.9rem;
-  color: #555;
+  font-size: 1.2rem;
+  color: #1e293b;
 `;
