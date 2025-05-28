@@ -18,6 +18,8 @@ const CardImgDiv = styled.div`
     height: 100%;
     object-fit: cover;
   }
+  position: relative;
+  overflow: hidden;
 `;
 
 const CardTextDiv = styled.div`
@@ -70,11 +72,27 @@ const CardTextDiv = styled.div`
   }
 `;
 
+const CircleBox = styled.div`
+  width: 15rem;
+  height: 15rem;
+  border-radius: 50%;
+  background-color: #84cc16;
+  position: absolute;
+  top: 65%;
+  left: 65%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 4rem 3rem 0;
+`;
+
 export const ServiceCard = ({ card }) => {
   return (
     <CardDiv>
       <CardImgDiv>
         <img src={card.img} alt="test" />
+        <CircleBox>{card.icon}</CircleBox>
       </CardImgDiv>
       <CardTextDiv>
         <h2>{card.title}</h2>

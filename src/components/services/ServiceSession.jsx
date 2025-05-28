@@ -1,6 +1,14 @@
 import { useEffect, useState } from "react";
 import { ServiceCard } from "./ServiceCard";
 import { styled } from "styled-components";
+import {
+  Truck,
+  PackageCheck,
+  Warehouse,
+  FileText,
+  ShoppingCart,
+  Layers,
+} from "lucide-react";
 
 const cardData = [
   {
@@ -8,36 +16,42 @@ const cardData = [
     title: "Express Delivery",
     description:
       "Fast and reliable shipping services ensuring timely delivery anywhere in the world.",
+    icon: <Truck size={60} color="white" />,
   },
   {
     img: "https://plus.unsplash.com/premium_photo-1661880749508-71d9e7170508?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     title: "Freight Forwarding",
     description:
       "Customized solutions for moving large shipments across land, sea, or air.",
+    icon: <PackageCheck size={60} color="white" />,
   },
   {
     img: "https://images.unsplash.com/photo-1542296332-2e4473faf563?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     title: "Warehousing",
     description:
       "Secure and scalable storage options tailored to your business needs.",
+    icon: <Warehouse size={60} color="white" />,
   },
   {
     img: "https://images.unsplash.com/photo-1651916850717-1f91cb32ec2c?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     title: "Customs Clearance",
     description:
       "Hassle-free import/export handling with complete documentation support.",
+    icon: <FileText size={60} color="white" />,
   },
   {
     img: "https://images.unsplash.com/photo-1645299023517-ada166ebc559?q=80&w=2073&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     title: "E-commerce Logistics",
     description:
       "Seamless order fulfillment and last-mile delivery for online businesses.",
+    icon: <ShoppingCart size={60} color="white" />,
   },
   {
     img: "https://images.unsplash.com/photo-1571244222371-0b0b60f3c92b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     title: "Supply Chain Management",
     description:
       "End-to-end solutions for optimizing your supply chain performance.",
+    icon: <Layers size={60} color="white" />,
   },
 ];
 
