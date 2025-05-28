@@ -6,6 +6,7 @@ const Section = styled.section`
   width: 100%;
   height: 60vh;
   padding: 0 4rem;
+  margin-top: 5rem;
 
   h1 {
     text-align: center;

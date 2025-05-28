@@ -11,7 +11,8 @@ const StatsSection = styled.section`
   width: 80%;
   margin: 0 auto;
   padding: 4rem;
-  height: 40vh;
+  height: 45vh;
+  margin-top: 10rem;
 `;
 
 const StatsGrid = styled.div`

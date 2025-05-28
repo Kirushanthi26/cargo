@@ -1,6 +1,8 @@
 import { ClientLogo } from "./components/clientLogos/ClientLogo";
+import Footer from "./components/footer/Footer";
 import { Hero } from "./components/hero/Hero";
 import { Intro } from "./components/intro/Intro";
+import LatestNews from "./components/news/LatestNews";
 import { ServiceSession } from "./components/services/ServiceSession";
 import { Stats } from "./components/stats/Stats";
 import { TrustedClients } from "./components/testimonials/TrustedClients";
@@ -18,6 +20,8 @@ export const App = () => {
         <Stats />
         <TrustedClients />
         <ClientLogo />
+        <LatestNews />
+        <Footer />
       </main>
     </Layout>
   );

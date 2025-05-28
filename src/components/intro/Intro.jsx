@@ -11,6 +11,7 @@ const WelcomeSection = styled.section`
   align-items: center;
   justify-content: center;
   gap: 6rem;
+  margin-top: 5rem;
 `;
 
 const IntroImgs = styled.div`

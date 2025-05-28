@@ -9,15 +9,16 @@ const ClientLogoSection = styled.section`
   background-color: #fff;
   padding: 4rem 0;
   width: 100%;
-  height: 20vh;
+  height: 30vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-block: 7rem;
 
   div {
-    width: 80%;
     display: flex;
     justify-content: space-around;
+    gap: 5rem;
 
     img {
       height: 4rem;
