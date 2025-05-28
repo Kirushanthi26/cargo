@@ -38,5 +38,4 @@ This project involved designing and developing a **Cargo Page** based on the pro
 npm install
 npm run dev
 ```
-[ 
-](http://localhost:5173/)
+[http://localhost:5173/](http://localhost:5173/)
