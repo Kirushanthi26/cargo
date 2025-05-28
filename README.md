@@ -1,12 +1,40 @@
-# React + Vite
+# 🚚 Cargo Page – Design & Development
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 📋 Task Summary
 
-Currently, two official plugins are available:
+This project involved designing and developing a **Cargo Page** based on the provided PDF file. The final implementation is **responsive for web only**, as mobile responsiveness was not part of the original requirement.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## ⏱️ Time Spent
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **UI Planning & Layout Structuring**: 2 hours
+- **React Components & Styling**: 7 hours
+- **Development (Functionality Implementation)**: 2 hours
+- **Finalizing Code & Refactoring**: 1 hour
+
+**Total Hours Spent**: 12 hours
+
+---
+
+## 🛠️ Technologies Used
+
+- React.js
+- styled-components
+- JavaScript (ES6)
+- CSS3
+- Git & GitHub
+- React Icons (icon package)
+
+---
+
+## 🧑‍💻 How to Run the Project
+
+1. Clone the repository.
+2. Navigate into the project directory.
+3. Run the following commands:
+
+```bash
+npm install
+npm run dev
+```
