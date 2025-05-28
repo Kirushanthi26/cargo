@@ -70,21 +70,15 @@ const CardTextDiv = styled.div`
   }
 `;
 
-export const ServiceCard = () => {
+export const ServiceCard = ({ card }) => {
   return (
     <CardDiv>
       <CardImgDiv>
-        <img
-          src="https://images.unsplash.com/photo-1579034963892-388c821d1d9f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-          alt="test"
-        />
+        <img src={card.img} alt="test" />
       </CardImgDiv>
       <CardTextDiv>
-        <h2>Service Name</h2>
-        <p>
-          Description of the service goes here. It should be concise and
-          informative, giving users a clear.
-        </p>
+        <h2>{card.title}</h2>
+        <p>{card.description}</p>
         <button>
           <span>&rarr;</span>Read More
         </button>
