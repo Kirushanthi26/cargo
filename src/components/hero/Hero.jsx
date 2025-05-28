@@ -1,5 +1,18 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+import { useState } from "react";
 import heroImg from "../../assets/image/mariah-dalusong.jpg";
+
+const fadeSlide = keyframes`
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`;
 
 const HeroSection = styled.section`
   background-image: linear-gradient(
@@ -18,13 +31,14 @@ const HeroSection = styled.section`
 
 const HeroStyles = styled.div`
   position: relative;
+  width: 38%;
 `;
 
 const HeroTextBox = styled.div`
-  width: 38%;
   height: 80vh;
   background-color: #fff;
   padding: 8rem 4rem;
+  animation: ${fadeSlide} 0.6s ease;
 
   & > *:not(:last-child) {
     margin-bottom: 4rem;
@@ -44,6 +58,7 @@ const HeroTextBox = styled.div`
     font-size: 7rem;
     font-weight: 400;
     color: black;
+
     span {
       margin-top: 1rem;
       display: block;
@@ -69,7 +84,6 @@ const HeroTextBox = styled.div`
     padding: 2rem 3rem;
     border: none;
     text-transform: uppercase;
-
     transition: all 0.3s ease-in-out;
 
     &:hover {
@@ -94,6 +108,7 @@ const HeroButton = styled.button`
   cursor: pointer;
   transition: all 0.3s ease-in-out;
   z-index: 1;
+
   &:hover {
     background-color: #fbbf24;
     color: white;
@@ -101,23 +116,30 @@ const HeroButton = styled.button`
 `;
 
 export const Hero = () => {
+  const [toggle, setToggle] = useState(false);
+
+  const handleToggle = () => setToggle((prev) => !prev);
+
   return (
     <HeroSection>
       <HeroStyles>
-        <HeroTextBox>
-          <p className="hero-subtitle">logistic</p>
+        <HeroTextBox key={toggle ? "1" : "0"}>
+          <p className="hero-subtitle">{toggle ? "delivery" : "logistic"}</p>
           <h1>
-            Best Shipping <span>partner</span>
+            {toggle ? "Global" : "Best Shipping"}
+            <span>{toggle ? "Solutions" : "Partner"}</span>
           </h1>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora,
-            ratione. Quisquam nulla voluptates, molestiae commodi quia doloribus
-            praesentium quidem at aliquid. Asperiores harum repellendus veniam.
+            {toggle
+              ? "Experience seamless worldwide freight services with unmatched reliability and cost efficiency."
+              : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, ratione. Quisquam nulla voluptates, molestiae commodi quia doloribus praesentium quidem at aliquid. Asperiores harum repellendus veniam."}
           </p>
           <a href="#">Discover more</a>
         </HeroTextBox>
       </HeroStyles>
-      <HeroButton className="hero-btn">2/2 &larr; &rarr;</HeroButton>
+      <HeroButton onClick={handleToggle}>
+        {toggle ? "1/2 ← →" : "2/2 ← →"}
+      </HeroButton>
     </HeroSection>
   );
 };
