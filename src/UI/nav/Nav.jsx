@@ -3,7 +3,6 @@ import logoImg from "../../assets/image/logo.png";
 
 const NavHeader = styled.header`
   background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   color: white;
   padding: 1rem;
   height: 10vh;
