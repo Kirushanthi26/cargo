@@ -18,22 +18,6 @@ const LeftColumn = styled.div`
   padding-right: 2rem;
 `;
 
-const LeftColumnFooter = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 1rem;
-  padding: 0 10rem 0 0;
-
-  button {
-    background-color: transparent;
-    border: 1px solid rgb(235, 235, 235);
-    cursor: pointer;
-    color: black;
-    padding: 0.5rem;
-  }
-`;
-
 const RightColumn = styled.div`
   flex: 1;
   min-width: 300px;
@@ -53,13 +37,36 @@ const Subtitle = styled.p`
   margin-bottom: 6rem;
 `;
 
+const AccordionItem = styled.div`
+  border-block: 1px solid #e5e7eb;
+  padding: 2rem 0;
+`;
+
+const AccordionTitle = styled.div`
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  font-weight: 500;
+
+  span {
+    background-color: black;
+    padding: 0.5rem 0.7rem;
+    color: white;
+  }
+`;
+
+const AccordionContent = styled.div`
+  margin-top: 2rem;
+  color: #555;
+`;
+
 const QuoteBox = styled.div`
   background-color: rgb(235, 235, 235);
   clip-path: polygon(0 0, 100% 0, 100% 85%, 90% 85%, 80% 100%, 80% 85%, 0 85%);
   height: 25rem;
   padding: 2rem;
   display: flex;
-  align-items: center;
+  justify-content: center;
   position: relative;
 `;
 
@@ -103,35 +110,39 @@ const Position = styled.p`
   color: gray;
 `;
 
-const AccordionItem = styled.div`
-  border-block: 1px solid #e5e7eb;
-  padding: 2rem 0;
-`;
-
-const AccordionTitle = styled.div`
+const ButtonGroup = styled.div`
   display: flex;
-  justify-content: space-between;
-  cursor: pointer;
-  font-weight: 500;
+  gap: 0.5rem;
 
-  span {
-    background-color: black;
-    padding: 0.5rem 0.7rem;
-    color: white;
+  button {
+    background-color: transparent;
+    border: 1px solid rgb(235, 235, 235);
+    cursor: pointer;
+    color: black;
+    padding: 0.5rem;
   }
 `;
 
-const AccordionContent = styled.div`
-  margin-top: 2rem;
-  color: #555;
-`;
-
-const testimonials = {
-  quote:
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.",
-  author: "John Deo",
-  position: "Managing Director",
-};
+const testimonials = [
+  {
+    quote:
+      "This company exceeded our expectations. Excellent communication and timely delivery every time. lorem ipsum dolor sit amet consectetur.",
+    author: "Alice Brown",
+    position: "Operations Manager",
+  },
+  {
+    quote:
+      "Reliable, professional, and truly customer-focused. We’ve been working with them for over a year now.",
+    author: "Michael Tan",
+    position: "Head of Logistics",
+  },
+  {
+    quote:
+      "They made our entire supply chain more efficient. Highly recommend their services.",
+    author: "Samantha Lee",
+    position: "Procurement Officer",
+  },
+];
 
 const accordionData = [
   "Dui ac hendrerit elementum quam ipsum auctor lorem",
@@ -140,34 +151,59 @@ const accordionData = [
   "Nulla scelerisque dul hendrerit elementum quam",
 ];
 
-export const TrustedClients = () => {
+const TrustedClients = () => {
+  const [testimonialIndex, setTestimonialIndex] = useState(0);
   const [activeIndex, setActiveIndex] = useState(null);
+
+  const handlePrev = () => {
+    setTestimonialIndex((prev) =>
+      prev === 0 ? testimonials.length - 1 : prev - 1
+    );
+  };
+
+  const handleNext = () => {
+    setTestimonialIndex((prev) =>
+      prev === testimonials.length - 1 ? 0 : prev + 1
+    );
+  };
+
+  const current = testimonials[testimonialIndex];
 
   return (
     <Section>
       <LeftColumn>
         <Title>Trusted Clients</Title>
         <Subtitle>Lorem ipsum dolor sit amet consectetur</Subtitle>
+
         <QuoteBox>
           <QuoteIcon>&ldquo;</QuoteIcon>
           <QuoteContent>
-            <QuoteText>{testimonials.quote}</QuoteText>
+            <QuoteText>{current.quote}</QuoteText>
           </QuoteContent>
         </QuoteBox>
-        <LeftColumnFooter>
-          <div>
-            <button>
+
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            marginTop: "1rem",
+            paddingRight: "10rem",
+          }}
+        >
+          <ButtonGroup>
+            <button onClick={handlePrev}>
               <ChevronLeft size={16} />
             </button>
-            <button>
+            <button onClick={handleNext}>
               <ChevronRight size={16} />
             </button>
-          </div>
+          </ButtonGroup>
           <div>
-            <Author>{testimonials.author}</Author>
-            <Position>{testimonials.position}</Position>
+            <Author>{current.author}</Author>
+            <Position>{current.position}</Position>
           </div>
-        </LeftColumnFooter>
+        </div>
       </LeftColumn>
 
       <RightColumn>
@@ -193,3 +229,5 @@ export const TrustedClients = () => {
     </Section>
   );
 };
+
+export default TrustedClients;
